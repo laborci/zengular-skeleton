@@ -3,7 +3,7 @@ let prefixer = require('gulp-autoprefixer');
 let less = require('gulp-less');
 let uglifycss = require("gulp-uglifycss");
 let googleWebFonts = require("gulp-google-webfonts");
-let buildConfig = require('./build-config.js');
+let buildConfig = require('./builder/build-config.js');
 
 gulp.task('default', () => {
 	gulp.start('build');

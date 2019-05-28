@@ -1,4 +1,4 @@
-let buildConfig = require("./build-config.js");
+let buildConfig = require("./builder/build-config.js");
 
 module.exports = [
 	{
