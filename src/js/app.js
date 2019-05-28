@@ -1,5 +1,11 @@
 import Brick from "zengular-brick";
-import MyBrick from "./bricks/my-brick/brick";
+import AppEventManager from "zengular-brick/src/app-event";
 
-Brick.registry.initialize();
+import "./bricks/my-brick/brick";
 
+new (class{
+	constructor(){
+		Brick.registry.initialize();
+		this.appEventManager = new AppEventManager(document.body);
+	}
+})();
