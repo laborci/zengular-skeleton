@@ -1,9 +1,10 @@
-let gulp = require('gulp');
-let prefixer = require('gulp-autoprefixer');
-let less = require('gulp-less');
-let uglifycss = require("gulp-uglifycss");
-let googleWebFonts = require("gulp-google-webfonts");
-let buildConfig = require('./builder/build-config.js');
+const gulp = require('gulp');
+const prefixer = require('gulp-autoprefixer');
+const less = require('gulp-less');
+const uglifycss = require("gulp-uglifycss");
+const googleWebFonts = require("gulp-google-webfonts");
+const buildConfig = require('./builder/build-config.js');
+
 
 gulp.task('default', () => {
 	gulp.start('build');
@@ -22,6 +23,7 @@ gulp.task('build', () => {
 	gulp.start('fonts');
 	gulp.start('copy');
 	gulp.start('compile-less');
+	bumpVersion();
 });
 
 gulp.task('fonts', () => {
@@ -36,6 +38,7 @@ gulp.task('fonts', () => {
 		    }))
 		    .pipe(gulp.dest(''))
 		;
+		bumpVersion();
 	});
 });
 
@@ -53,6 +56,7 @@ gulp.task('copy-watched', () => {
 			    .pipe(gulp.dest(entry.dest));
 		}
 	});
+	bumpVersion();
 });
 
 gulp.task('compile-less', () => {
@@ -63,5 +67,11 @@ gulp.task('compile-less', () => {
 		    .pipe(prefixer('last 2 versions', 'ie 9'))
 		    .pipe(gulp.dest(entry.dest));
 	});
+	bumpVersion();
 });
 
+function bumpVersion(){
+	const path = require("path");
+	const VersionBump = require('webpack-version-bump');
+	(new VersionBump({file: path.resolve(__dirname, buildConfig.buildVersion)})).upBuildNumber();
+}

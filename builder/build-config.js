@@ -1,4 +1,5 @@
 module.exports = new (require("./build-config-reader"))({
+	buildVersion: "./builder/build-version.json",
 	googlefonts: {
 		fontlist: "google-fonts",
 		path    : "./public/fonts/",

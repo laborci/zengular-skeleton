@@ -7,6 +7,8 @@ module.exports = class BuildConfigReader{
 
 	get googlefonts(){return this.config.googlefonts; }
 
+	get buildVersion(){return this.config.buildVersion; }
+
 	get copy(){return this.config.copy; }
 
 	get css(){return this.config.css; }
