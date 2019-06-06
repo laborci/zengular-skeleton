@@ -43,7 +43,6 @@
 		"zengular-ajax": "^1.0.0",
 		"zengular-brick": "^1.0.3",
 		"zengular-router": "^1.0.0",
-		"webpack-version-bump": "^1.0.8"
 	},
 	"devDependencies": {
 		"webpack-cli": "^3.3.2"
