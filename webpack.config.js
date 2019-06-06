@@ -1,5 +1,5 @@
 let buildConfig = require("./builder/build-config.js");
-let VersionBump = require('webpack-version-bump');
+let VersionBump = require('./builder/version-bump-plugin');
 let path = require('path');
 
 module.exports = [
@@ -8,7 +8,7 @@ module.exports = [
 		entry:   buildConfig.jsEntries,
 		output:  {filename: '[name].js', path: __dirname},
 		resolve: {modules: ['./node_modules']},
-		plugins: [new VersionBump({file: path.resolve(__dirname, buildConfig.buildVersion)})],
+		plugins: [new VersionBump({file: path.resolve(__dirname, buildConfig.buildVersionFile)})],
 		module:  {
 			rules: [
 				{
