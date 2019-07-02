@@ -1,10 +1,9 @@
-const gulp = require('gulp');
-const prefixer = require('gulp-autoprefixer');
-const less = require('gulp-less');
-const uglifycss = require("gulp-uglifycss");
-const googleWebFonts = require("gulp-google-webfonts");
-const buildConfig = require('./builder/build-config.js');
-
+let gulp = require('gulp');
+let prefixer = require('gulp-autoprefixer');
+let less = require('gulp-less');
+let uglifycss = require("gulp-uglifycss");
+let googleWebFonts = require("gulp-google-webfonts");
+let buildConfig = require('./build-config');
 
 gulp.task('default', () => {
 	gulp.start('build');
@@ -72,6 +71,6 @@ gulp.task('compile-less', () => {
 
 function bumpVersion(){
 	const path = require("path");
-	const VB = require("./builder/version-bump-plugin");
+	const VB = require("./version-bump-plugin");
 	(new VB({file: path.resolve(__dirname, buildConfig.buildVersionFile)})).bump();
 }

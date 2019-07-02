@@ -10,7 +10,7 @@ class VersionBumpPlugin {
 	}
 
 	apply(compiler) {
-		compiler.hooks.done.tap('VersionBumpPlugin', stats => { this.bump(stats); });
+		compiler.hooks.done.tap('VersionBumpPlugin', stats => { this.bump(); });
 	}
 }
 

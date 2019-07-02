@@ -1,5 +1,5 @@
-let buildConfig = require("./builder/build-config.js");
-let VersionBump = require('./builder/version-bump-plugin');
+let buildConfig = require("./build-config.js");
+let VersionBump = require('./version-bump-plugin');
 let path = require('path');
 
 module.exports = [
@@ -7,7 +7,7 @@ module.exports = [
 		name:    'Transpiler',
 		entry:   buildConfig.jsEntries,
 		output:  {filename: '[name].js', path: __dirname},
-		resolve: {modules: ['./node_modules']},
+		resolve: {modules: ['./build/node_modules']},
 		plugins: [new VersionBump({file: path.resolve(__dirname, buildConfig.buildVersionFile)})],
 		module:  {
 			rules: [
