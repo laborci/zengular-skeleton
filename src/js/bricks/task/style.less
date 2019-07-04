@@ -1,0 +1,30 @@
+[is=task] {
+	div {
+		padding:5px;
+		border:1px solid #eee;
+		color:#999;
+		margin-bottom: 4px;
+		line-height: 20px;
+
+		&.done{
+			text-decoration:line-through;
+			color: #ccc;
+		}
+
+		span{
+			transition: all .3s;
+			opacity: 0;
+			float:right;
+			color:white;
+			background-color: #990400;
+			width: 20px;
+			text-align: center;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+
+		&:hover span{
+			opacity: 1;
+		}
+	}
+}

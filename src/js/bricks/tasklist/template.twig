@@ -1,0 +1,3 @@
+{% for task in tasks %}
+	<div is="task" data-index="{{ loop.index0 }}" data-done="{{ task.done }}">{{ task.text }}</div>
+{% endfor %}

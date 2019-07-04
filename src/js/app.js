@@ -1,14 +1,11 @@
-import Brick from "zengular-brick";
+import Brick           from "zengular-brick";
 import AppEventManager from "zengular-brick/src/app-event";
-
-import "./bricks/my-brick/brick";
+import "./bricks/todo/brick";
 
 new (class{
 
 	constructor(){
 		Brick.registry.initialize();
-		var a = 12;
-		this.appEventManager = new AppEventManager(document.body);
 	}
 
 })();
