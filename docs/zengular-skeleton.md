@@ -104,8 +104,8 @@ module.exports = new (require("./build-config-reader"))({
 	
 	// a less fordító konfigurálása - akár több forrás-cél mappa párt is megadhatsz
 	// a forrás mappában közvetlen .less fileok kerülnek fordításra
-	// src: honnan
-	// dest: hova
+	// - src: honnan
+	// - dest: hova
 	css: [
 		{
 			src : "../src/css/",
@@ -115,8 +115,8 @@ module.exports = new (require("./build-config-reader"))({
 	
 	// a js fordító konfigurálása - akár több forrás-cél mappa párt is megadhatsz
 	// a forrás mappában közvetlen .js fileok kerülnek fordításra
-	// src: honnan
-	// dest: hova
+	// - src: honnan
+	// - dest: hova
 	js: [
 		{
 			src : "../src/js/", 
