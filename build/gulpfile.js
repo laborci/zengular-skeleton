@@ -4,6 +4,7 @@ let less = require('gulp-less');
 let uglifycss = require("gulp-uglifycss");
 let googleWebFonts = require("gulp-google-webfonts");
 let buildConfig = require('./build-config');
+let fs = require('fs');
 
 gulp.task('default', () => {
 	gulp.start('build');
@@ -38,6 +39,19 @@ gulp.task('fonts', () => {
 		    .pipe(gulp.dest(''))
 		;
 		bumpVersion();
+		if(typeof buildConfig.googlefonts.srcify !== 'undefined'){
+			let src = entry.dest+buildConfig.googlefonts.css;
+			let dest = entry.src+buildConfig.googlefonts.srcify.srcpath;
+			fs.copyFileSync(src, dest);
+			let str = fs.readFileSync(dest, {encoding: 'UTF-8'});
+			const regex = /url\((.*)\//gm;
+			let m;
+			while ((m = regex.exec(str)) !== null) {
+				if (m.index === regex.lastIndex) {regex.lastIndex++;}
+				str = str.replace(m[1], '/fonts');
+			}
+			fs.writeFileSync(dest, str, {encoding: 'UTF-8'});
+		}
 	});
 });
 
