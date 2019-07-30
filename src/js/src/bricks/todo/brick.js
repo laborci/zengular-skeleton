@@ -1,7 +1,7 @@
 import Brick       from "zengular-brick";
 import twig        from "./template.twig";
 import "./style.less";
-import dataService from "./../../services/data-service";
+import dataService from "../../services/data-service";
 import Tasklist    from "../tasklist/brick";
 
 @Brick.register('todo-app', twig)

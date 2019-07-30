@@ -2,3 +2,4 @@
 public/**
 build/build-version
 build/node_modules
+build/package-lock.json

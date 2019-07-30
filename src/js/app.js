@@ -1,11 +1,6 @@
-import Brick           from "zengular-brick";
-import AppEventManager from "zengular-brick/src/app-event";
-import "./bricks/todo/brick";
+import Zapplication from "zengular-application";
+import "./src/loader";
 
-new (class{
-
-	constructor(){
-		Brick.registry.initialize();
-	}
-
+new (class extends Zapplication{
+	run(){}
 })();

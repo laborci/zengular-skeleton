@@ -88,6 +88,18 @@ Az alábbi kód azonnal elküldi a hívást a szerver irányába és egy promist
 ```js
 myRequest.promise();
 ```
+#### Promise shortcuts
+```js
+Ajax.post(url, data): Promise
+Ajax.get(url, data): Promise
+Ajax.put(url, data): Promise
+Ajax.delete(url, data): Promise
+Ajax.json.post(url, data): Promise
+Ajax.json.get(url, data): Promise
+Ajax.json.put(url, data): Promise
+Ajax.json.delete(url, data): Promise
+
+```
 
 ## Method chaining
 Az ajax implementáció majd minden metódusa (logikusan a kivételek: `do()`, `cancel()`, `promise()`) visszaadja a az ajax objektumot magát, így a kódodat az alábbiak szerint is lehet - érdemes - írni:
